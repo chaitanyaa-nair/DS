@@ -1,3 +1,5 @@
+//trying to convert an array into a linked list. However, this code contains bugs that need to be fixed. 
+
 #include <stdio.h>
 #include <stdlib.h>
 
