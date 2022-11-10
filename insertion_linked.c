@@ -1,51 +1,43 @@
-//trying to convert an array into a linked list. However, this code contains bugs that need to be fixed. The time complexity in this code is very high. 
-
 #include <stdio.h>
 #include <stdlib.h>
-
-int CreateList();
-void Displaylist();
 
 struct nodeType {
     int val;
     struct nodeType *next;
 };
 
+//renaming structure for easy access
 typedef struct nodeType Node;
+int Createlist();
+void Displaylist();
+Node* insertion(Node* head);
+
 Node *head;
 
-int main (int N, int i){
-    //taking input from the user and storing it as an array
-    printf("Please enter length of the linked list:\n");
+int main(){
+    //taking the user's input for length of linked list
+    int N;
+    printf("\nPlease enter the length of linked list: \n");
     scanf("%d", &N);
-    if (N <= 0){
-        printf("EHHHH, no list can be made!");
-    }
-    else{
-        int A[N];
 
-        printf("Please enter values for N elements:\n");
+    Createlist(N);
 
-        for (i = 0; i < N; i++){
-            scanf("%d", &A[i]);
-        }
+    printf("\n The linked list is \n");
+    Displaylist();
 
-        printf("The array is:\n");
-        for (i = 0; i < N; i++){
-            printf("%d\n", A[i]);
-        }
+    //sort the linked list using selection sort with head as input
+    insertion(head);
 
-        CreateList(A[N], N);
-        Displaylist();
-    }
-    
+    //print linked list after this. 
+    printf("\n The sorted linked list is \n");
+    Displaylist();
 }
 
-int CreateList (int A[], int N){
+int Createlist (int N){
 
     //creating two temporary nodes
     Node *newNode, *temp;
-    int x;
+    int val, x;
     head = (Node*) malloc(sizeof(Node));
     //temp = (Node*) malloc(sizeof(Node));
     //terminate if memory not allocated
@@ -55,7 +47,11 @@ int CreateList (int A[], int N){
         exit (0);
     }
 
-    head -> val = A[0]; //link data field with value
+    //input first node from user
+    printf("Enter the data for node 1:");
+    scanf("%d", &val);
+
+    head -> val = val; //link data field with value
     head -> next = NULL; //link to the address of the next item in the list
 
     //creating n-1 nodes and adding values to the list
@@ -70,7 +66,9 @@ int CreateList (int A[], int N){
             break;
         }
 
-        newNode->val = A[x-1]; // Link data field of newNode
+        printf("Enter the data of node %d: ", x);
+        scanf("%d", &val);
+        newNode->val = val; // Link data field of newNode
         newNode->next = NULL; // Make sure new node points to NULL 
 
         temp->next = newNode; // Link previous node with newNode
@@ -95,4 +93,8 @@ void Displaylist()
         printf("Data = %d\n", temp->val); // Print data of current node
         temp = temp->next;                 // Move to next node
     }
+}
+
+Node* insertion(Node* head){
+    
 }
