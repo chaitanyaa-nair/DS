@@ -10,9 +10,11 @@ struct nodeType {
 typedef struct nodeType Node;
 int Createlist();
 void Displaylist();
-Node* insertion(Node* head);
+void insertion();
+void insert_node(Node* new);
 
 Node *head;
+Node *sorted;
 
 int main(){
     //taking the user's input for length of linked list
@@ -95,6 +97,42 @@ void Displaylist()
     }
 }
 
-Node* insertion(Node* head){
-    
+//function to add the sorted nodes into a new list
+void insert_node(Node* new)
+{
+    //Special case for the head end
+    if (sorted == NULL || sorted->val >= new->val) {
+        new->next = sorted;
+        sorted = new;
+    }
+    else {
+        Node* current = sorted;
+        //Locate the node before the point of insertion
+        while (current->next != NULL && current->next->val < new->val) {
+            current = current->next;
+        }
+        new->next = current->next;
+        current->next = new;
+    }
+}
+  
+// function to sort a singly linked list using insertion sort
+void insertion()
+{
+  
+    Node* temp = head;
+  
+    // Traverse and insert every node to sorted linked list
+    while (temp != NULL) {
+  
+        //Store pointer next for next iteration
+        Node* next = temp->next;
+  
+        //insert temp in sorted linked list
+        insert_node(temp);
+
+        temp = next;
+    }
+    // Update head to point to sorted linked list
+    head = sorted;
 }
