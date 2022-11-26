@@ -36,7 +36,6 @@ int Createlist (int N){
 
     if (head == NULL){
         printf("There is an error (ehhhhhhh!)");
-        exit (0);
     }
 
     //input first node from user
