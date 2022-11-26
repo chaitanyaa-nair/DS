@@ -1,10 +1,10 @@
-#include <stdio.h>
-
-void selection (int A[], int n);
-void swap (int *with, int *to);
+#include<stdio.h>
+#include<stdlib.h>
+int bubblesort(int arr[], int n);
+void swap(int *with, int *to); 
 
 int main (){
-    //create an array using user input
+    //create an array using user input 
     int n, i;
     printf("Enter the length of the array:");
     scanf ("%d", &n);
@@ -13,6 +13,7 @@ int main (){
     if (n <= 0){
         printf("Error, please enter a non-zero positive number.");
     }
+
     int arr[n];
     //taking inputs into the array
     printf("Enter the elements:");
@@ -25,7 +26,7 @@ int main (){
         printf("%d\n", arr[i]);
         }
     
-    selection(arr, n);
+    bubblesort(arr, n);
     
     printf("\n The sorted array is:\n");
         
@@ -34,21 +35,13 @@ int main (){
         }
     }
 
-
-//devise the selection sort algorithm 
-void selection(int A[], int n){
-    int i;
-    for (i = 0; i < n-1; i++){
-        int min = i;
-        //check for the minimum element
-        int j;
-        for (j = i + 1; j < n; j++){
-            if (A[j] < A[min]){
-                min = j;
-            }
-            //if smallest element, swap with the first position
-            }
-            swap (&A[min], &A[i]);
+int bubblesort(int arr[], int n){
+    int j, i;
+    for (j = 0; j < n-1; j++){
+        for (i = 0; i < n - j - 1; i++)
+            if (arr[i] > arr[i + 1])
+            //change > to < in condition to get descending order
+                swap(&arr[i], &arr[i + 1]);
     }
 }
 

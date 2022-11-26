@@ -2,9 +2,9 @@
 
 void insertion(int arr[], int n);
 
-int main (int n, int i){
-    //create an array using user input
-
+int main (){
+    //create an array using user input 
+    int n, i;
     printf("Enter the length of the array:");
     scanf ("%d", &n);
 

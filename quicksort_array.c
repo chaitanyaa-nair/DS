@@ -6,7 +6,8 @@ void swap (int *with, int *to);
 int partition(int arr[], int min, int max);
 void quicksort(int arr[], int min, int max);
 
-int main (int n, int i){
+int main (){
+    int n, i;
     //create an array using user input
 
     printf("Enter the length of the array:");
