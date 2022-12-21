@@ -94,4 +94,8 @@ void main(){
     printf("BST:\n");
     Inorder(arraytoBST(A, n));
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 905b323f5ecee4465fcb28c1ebdcbdd7d0d1e198

@@ -89,4 +89,8 @@ int main()
   printf("After extracting min: ");
 
   printArray(array, size);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 905b323f5ecee4465fcb28c1ebdcbdd7d0d1e198

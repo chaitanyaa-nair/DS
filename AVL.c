@@ -343,4 +343,8 @@ void inorder(Node* root)
     printf("%d ", root->data);
     inorder(root->right);
 }
+<<<<<<< HEAD
  
+=======
+ 
+>>>>>>> 905b323f5ecee4465fcb28c1ebdcbdd7d0d1e198
