@@ -1,28 +1,15 @@
 //showing segmentation fault - need to debug
 
 #include <stdio.h>
+
 void merge (int arr[], int a, int b, int c);
 void mergesort(int arr[], int s, int e);
 
 int main (){
-    //create an array using user input 
-    int n, i;
-    printf("Enter the length of the array:");
-    scanf ("%d", &n);
-
-    //checking if n is a non-zero positive number
-    if (n <= 0){
-        printf("Error, please enter a non-zero positive number.");
-    }
-
-    int arr[n];
-    //taking inputs into the array
-    printf("Enter the elements:");
-    for (i=0; i<n; i++){
-        scanf ("%d", &arr[i]);
-        }
+    
+    int arr[]={2, 23, 82, 55, 12, 9, 90}; 
+    int i, n = sizeof(arr);
     printf("\n The unsorted array is:\n");
-        
     for (i = 0; i < n; i++){
         printf("%d\n", arr[i]);
         }
@@ -65,6 +52,7 @@ void merge (int arr[], int a, int b, int c){
     }
 }
 
+//issue begins from here - need to debug
 void mergesort(int arr[], int s, int e){
     if (s < e){
         //find midpoint
